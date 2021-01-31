@@ -1,0 +1,31 @@
+Voici un autre algorithme, dû à Euclide, qui détermine le PGCD de 2 nombres naturels a et b.
+
+si un des nombres est nul, l’autre est le PGCD
+sinon il faut soustraire le plus petit du plus grand
+et laisser le plus petit inchangé.
+Puis, recommencer ainsi avec la nouvelle paire jusqu’à ce que un des deux
+nombres soit nul. Dans ce cas, l’autre nombre est le PGCD.
+Exemple: si a vaut 32 et b vaut 14, on obtient successivement
+32 14
+32-14=18 14
+14 4=18-14
+14-4=10 4
+10-4=6 4
+6-4=2 4
+4-2=2 2
+2 2-2=0
+
+
+Function( a, b: entier): entier
+Debut
+
+tant que (a*b#0) faire
+si a>b alors a < -- a-b
+sinon b < -- b-a
+finsi
+fin tantque
+si a=0 alors retourner b
+sinon retourner a
+finsi
+
+Fin
